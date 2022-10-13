@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>个人常用Git命令指南 | Brennan&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/brennan-wu-blog/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/brennan-wu-blog/assets/css/0.styles.6d0ebdc8.css" as="style"><link rel="preload" href="/brennan-wu-blog/assets/js/app.dbaf06ec.js" as="script"><link rel="preload" href="/brennan-wu-blog/assets/js/2.645e93c2.js" as="script"><link rel="preload" href="/brennan-wu-blog/assets/js/3.11184e78.js" as="script"><link rel="preload" href="/brennan-wu-blog/assets/js/14.ef821111.js" as="script"><link rel="prefetch" href="/brennan-wu-blog/assets/js/10.bc0fde3e.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/11.90ac4ad4.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/12.ce346b16.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/13.6b52ac33.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/15.9f9b68da.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/16.2fb9eca8.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/17.974fdb94.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/18.63cb8e0d.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/19.fa0790d6.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/20.439e104b.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/21.89f49078.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/22.f8fd5344.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/23.e3d8299b.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/24.c28d8fae.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/25.be00134e.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/26.3377bcbb.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/27.90422782.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/28.5b7c9794.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/29.e935a1f4.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/30.4585dd02.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/31.2a4bf7a5.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/32.c013dc22.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/33.ce4f4f5b.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/34.6dcc0166.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/35.6410f39a.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/36.f507b619.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/37.4adcd24c.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/38.9f6c153f.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/39.af0a5c4d.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/4.b16391ac.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/5.b2f07df9.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/6.5a0bf375.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/7.43e8494d.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/8.d7074b1a.js"><link rel="prefetch" href="/brennan-wu-blog/assets/js/9.6d0180ce.js">
+    <link rel="stylesheet" href="/brennan-wu-blog/assets/css/0.styles.6d0ebdc8.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/brennan-wu-blog/" class="home-link router-link-active"><img src="/brennan-wu-blog/img/logo.png" alt="Brennan's blog" class="logo"> <span class="site-name can-hide">Brennan's blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/brennan-wu-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/brennan-wu-blog/study/" class="nav-link">学习笔记</a></div><div class="nav-item"><a href="/brennan-wu-blog/grow/" class="nav-link">成长笔记</a></div><div class="nav-item"><a href="/brennan-wu-blog/read/" class="nav-link">读书笔记</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="收藏导航" class="dropdown-title"><a href="/brennan-wu-blog/collection/" class="link-title">收藏导航</a> <span class="title" style="display:none;">收藏导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/pages/527bc4/" class="nav-link">我的导航</a></li><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/pages/c8836a/" class="nav-link">我的收藏</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/brennan-wu-blog/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/archives/" class="nav-link">归档</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/brennan-wu-blog/img/logo.png"> <div class="blogger-info"><h3>Brennan Wu</h3> <span>过度忙碌使你落后，有空别忘了给自己充电!</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/brennan-wu-blog/" class="nav-link">首页</a></div><div class="nav-item"><a href="/brennan-wu-blog/study/" class="nav-link">学习笔记</a></div><div class="nav-item"><a href="/brennan-wu-blog/grow/" class="nav-link">成长笔记</a></div><div class="nav-item"><a href="/brennan-wu-blog/read/" class="nav-link">读书笔记</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="收藏导航" class="dropdown-title"><a href="/brennan-wu-blog/collection/" class="link-title">收藏导航</a> <span class="title" style="display:none;">收藏导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/pages/527bc4/" class="nav-link">我的导航</a></li><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/pages/c8836a/" class="nav-link">我的收藏</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/brennan-wu-blog/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/brennan-wu-blog/archives/" class="nav-link">归档</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue.js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Git</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/brennan-wu-blog/pages/637e61/" class="sidebar-link">个人博客搭建部署</a></li><li><a href="/brennan-wu-blog/pages/eb4829/" aria-current="page" class="active sidebar-link">个人常用Git命令指南</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/brennan-wu-blog/pages/eb4829/#配置操作" class="sidebar-link">配置操作</a></li><li class="sidebar-sub-header level2"><a href="/brennan-wu-blog/pages/eb4829/#本地操作" class="sidebar-link">本地操作</a></li><li class="sidebar-sub-header level2"><a href="/brennan-wu-blog/pages/eb4829/#分支操作" class="sidebar-link">分支操作</a></li><li class="sidebar-sub-header level2"><a href="/brennan-wu-blog/pages/eb4829/#变更历史" class="sidebar-link">变更历史</a></li><li class="sidebar-sub-header level2"><a href="/brennan-wu-blog/pages/eb4829/#标签操作" class="sidebar-link">标签操作</a></li><li class="sidebar-sub-header level2"><a href="/brennan-wu-blog/pages/eb4829/#远端交互" class="sidebar-link">远端交互</a></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-5712e8f9><div class="articleInfo" data-v-5712e8f9><ul class="breadcrumbs" data-v-5712e8f9><li data-v-5712e8f9><a href="/brennan-wu-blog/" title="首页" class="iconfont icon-home router-link-active" data-v-5712e8f9></a></li> <li data-v-5712e8f9><a href="/brennan-wu-blog/study/#学习笔记" data-v-5712e8f9>学习笔记</a></li><li data-v-5712e8f9><a href="/brennan-wu-blog/study/#Git" data-v-5712e8f9>Git</a></li></ul> <div class="info" data-v-5712e8f9><div title="作者" class="author iconfont icon-geren" data-v-5712e8f9><a href="https://github.com/wyd112821" target="_blank" title="作者" class="beLink" data-v-5712e8f9>Brennan Wu</a></div> <div title="创建时间" class="date iconfont icon-rili" data-v-5712e8f9><a href="javascript:;" data-v-5712e8f9>2022-10-13</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">个人常用Git命令指南<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h1 id="个人常用git命令指南"><a href="#个人常用git命令指南" class="header-anchor">#</a> 个人常用Git命令指南</h1> <div class="custom-block note"><p class="custom-block-title">建议</p> <p>不要越过命令行这座山而直接去使用 GUI。先不论 GUI 是否支持复杂的操作，当在实际工作中遇到问题的时候，可能无法找到 GUI 的解决方案，因为搜索引擎查出来的都是命令行。而且命令行的错误提示是非常详细的，可以准确锁定错误的原因以及正确的使用方法，孰能自然生巧。</p></div> <p>整理了一些个人常用的 Git 操作，方便工作查阅及温故知新。</p> <h2 id="配置操作"><a href="#配置操作" class="header-anchor">#</a> 配置操作</h2> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># 配置全局git用户名</span>
+git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.name <span class="token punctuation">[</span>用户名<span class="token punctuation">]</span>
+
+<span class="token comment"># 配置全局git邮箱</span>
+git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global user.email <span class="token punctuation">[</span>邮箱<span class="token punctuation">]</span>
+
+<span class="token comment"># 查看全局配置</span>
+git config <span class="token punctuation">-</span><span class="token punctuation">-</span>global <span class="token punctuation">-</span><span class="token punctuation">-</span>list
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="本地操作"><a href="#本地操作" class="header-anchor">#</a> 本地操作</h2> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># 查看文件、文件夹在工作区、暂存区的状态</span>
+git status
+
+<span class="token comment"># 将文件加入到暂存区中，实现追踪</span>
+git add ./<span class="token punctuation">[</span>文件名<span class="token punctuation">]</span>
+
+<span class="token comment"># 将修改的内容暂存，并让本地代码回退到修改前的状态</span>
+git stash
+
+<span class="token comment"># 将暂存的内容恢复</span>
+git stash apply
+
+<span class="token comment"># 比较工作区和暂存区的所有差异</span>
+git diff
+
+<span class="token comment"># 将文件从暂存区中撤销出来</span>
+git reset HEAD <span class="token punctuation">[</span>文件名<span class="token punctuation">]</span>
+
+<span class="token comment"># 项目回到上一个版本</span>
+git reset <span class="token punctuation">-</span><span class="token punctuation">-</span>hard HEAD^
+
+<span class="token comment"># 项目回到指定的版本</span>
+git reset <span class="token punctuation">-</span><span class="token punctuation">-</span>hard <span class="token punctuation">[</span>提交ID<span class="token punctuation">]</span>
+
+<span class="token comment"># 指定文件回到指定的版本</span>
+git checkout <span class="token punctuation">[</span>提交ID<span class="token punctuation">]</span> <span class="token punctuation">-</span><span class="token punctuation">-</span> <span class="token punctuation">[</span>文件名<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="分支操作"><a href="#分支操作" class="header-anchor">#</a> 分支操作</h2> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># 创建分支</span>
+git branch <span class="token punctuation">[</span>分支名<span class="token punctuation">]</span>
+
+<span class="token comment"># 查看本地所有分支</span>
+git branch
+
+<span class="token comment"># 查看本地分支与远程分支的关系</span>
+git branch <span class="token punctuation">-</span>av
+
+<span class="token comment"># 切换到指定的分支</span>
+git checkout <span class="token punctuation">[</span>分支名<span class="token punctuation">]</span>
+
+<span class="token comment"># 删除指定的分支</span>
+git branch <span class="token punctuation">-</span>d <span class="token punctuation">[</span>分支名<span class="token punctuation">]</span>
+
+<span class="token comment"># 创建并切换到指定的分支</span>
+git checkout <span class="token punctuation">-</span>b <span class="token punctuation">[</span>分支名<span class="token punctuation">]</span>
+
+<span class="token comment"># 创建切换到本地分支，并与远程分支做关联</span>
+git checkout <span class="token punctuation">-</span>b <span class="token punctuation">[</span>本地分支<span class="token punctuation">]</span> <span class="token punctuation">[</span>远程分支<span class="token punctuation">]</span>
+
+<span class="token comment"># 将此分支合并到当前的分支</span>
+git merge <span class="token punctuation">[</span>分支名<span class="token punctuation">]</span>
+
+<span class="token comment"># 合并冲突时，忽略合并过来的分支代码，保留原分支代码</span>
+git merge <span class="token punctuation">-</span><span class="token punctuation">-</span>abort
+
+<span class="token comment"># 删除远程分支</span>
+git push origin <span class="token punctuation">-</span><span class="token punctuation">-</span>delete <span class="token punctuation">[</span>分支名<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h2 id="变更历史"><a href="#变更历史" class="header-anchor">#</a> 变更历史</h2> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># 查看全部提交历史的详细信息</span>
+git log
+
+<span class="token comment"># 查看全部提交历史的简要信息</span>
+git log <span class="token punctuation">-</span><span class="token punctuation">-</span>oneline
+
+<span class="token comment"># 查看版本路线</span>
+git log <span class="token punctuation">-</span><span class="token punctuation">-</span>oneline <span class="token punctuation">-</span><span class="token punctuation">-</span>graph
+
+<span class="token comment"># 查看某个用户的提交历史</span>
+git log <span class="token punctuation">-</span><span class="token punctuation">-</span>author=<span class="token punctuation">[</span>用户名<span class="token punctuation">]</span>
+
+<span class="token comment"># 查看本地所有历史记录</span>
+git reflog
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="标签操作"><a href="#标签操作" class="header-anchor">#</a> 标签操作</h2> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># 给最新的一次提交创建标签</span>
+git tag <span class="token punctuation">[</span>标签名<span class="token punctuation">]</span>
+
+<span class="token comment"># 查看所有标签</span>
+git tag
+
+<span class="token comment"># 给指定id的提交创建标签</span>
+git tag <span class="token punctuation">[</span>标签名<span class="token punctuation">]</span> <span class="token punctuation">[</span>提交版本ID<span class="token punctuation">]</span>
+
+<span class="token comment"># 删除指定的标签</span>
+git tag <span class="token punctuation">-</span>d <span class="token punctuation">[</span>标签名<span class="token punctuation">]</span>
+
+<span class="token comment"># 将指定的标签推送到远程</span>
+git push origin <span class="token punctuation">[</span>标签名<span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="远端交互"><a href="#远端交互" class="header-anchor">#</a> 远端交互</h2> <div class="language-yaml line-numbers-mode"><pre class="language-yaml"><code><span class="token comment"># 查看关联的所有远程仓库名称及地址</span>
+git remote <span class="token punctuation">-</span>v
+
+<span class="token comment"># 与远程仓库做关联</span>
+git remote add origin <span class="token punctuation">[</span>远程仓库地址<span class="token punctuation">]</span>
+
+<span class="token comment"># 从远程获取最新版本到本地，但不会自动合并（取回的代码对你本地的开发代码没有影响）</span>
+git fetch
+
+<span class="token comment"># 从远程拉取最新版本到本地并自动merge本地代码</span>
+git pull
+
+<span class="token comment"># 提交本地仓库到远程（-u 是设置默认的推送地址，下次可以直接使用git push命令）</span>
+git push <span class="token punctuation">-</span>u origin master
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div></div> <!----> <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/10/13, 09:35:16</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/brennan-wu-blog/pages/637e61/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">个人博客搭建部署</div></a> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/brennan-wu-blog/pages/637e61/" class="prev">个人博客搭建部署</a></span> <!----></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/brennan-wu-blog/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/brennan-wu-blog/pages/637e61/"><div>
+            个人博客搭建部署
+            <!----></div></a> <span class="date">09-28</span></dt></dl><dl><dd>02</dd> <dt><a href="/brennan-wu-blog/pages/d1410f/"><div>
+            如何从初级到专家(P4-P7)打破成长瓶颈和有效突破
+            <!----></div></a> <span class="date">09-21</span></dt></dl><dl><dd>03</dd> <dt><a href="/brennan-wu-blog/pages/f48c07/"><div>
+            关于代码评审那些不得不说的事儿
+            <!----></div></a> <span class="date">09-19</span></dt></dl> <dl><dd></dd> <dt><a href="/brennan-wu-blog/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:985979261@qq.com" title="发邮件" target="_blank" class="iconfont icon-juchangxinxiang"></a><a href="https://github.com/wyd112821" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://gitee.com/wuyadong112821" title="gitee" target="_blank" class="iconfont icon-gitee"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2022-2022
+    <span>Brennan Wu | <a href="https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE" target="_blank">MIT License</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-262" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-43_zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/brennan-wu-blog/assets/js/app.dbaf06ec.js" defer></script><script src="/brennan-wu-blog/assets/js/2.645e93c2.js" defer></script><script src="/brennan-wu-blog/assets/js/3.11184e78.js" defer></script><script src="/brennan-wu-blog/assets/js/14.ef821111.js" defer></script>
+  </body>
+</html>
